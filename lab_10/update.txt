@@ -1,0 +1,26 @@
+
+    public void makeMoney(int numberOfMine){
+        int higestEarnTown = highestPayTown(makeMoneyAtMine(numberOfMine));
+        int [] restGoldMoney = new int[townsList.size()];
+
+        if (townsList.get(higestEarnTown).getRestOfPlayerGold() > 0) {
+            int goldValue = townsList.get(higestEarnTown).getRestOfPlayerGold();
+            for (int i = 0, priceForRoadToTown = 0; i < townsList.size(); i++){
+                priceForRoadToTown = player.payMoneyForRoad(townsList.get(i).getDistanceToTown());
+                restGoldMoney[i] = townsList.get(i).earnMoneyAtTown(goldValue) - priceForRoadToTown;
+            }
+        }
+        
+        
+    }
+
+    private int highestPayTown(int [] townPriceResult){
+        int indexOfTown = 0;
+        for (int i = 0, maxValue = 0; i < townsList.size(); i++){
+            if (townPriceResult[i] > maxValue) {
+                maxValue = townPriceResult[i];
+                indexOfTown = i;
+            }
+        }
+        return indexOfTown;
+    }
