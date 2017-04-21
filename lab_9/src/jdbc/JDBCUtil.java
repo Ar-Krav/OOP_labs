@@ -19,7 +19,7 @@ public class JDBCUtil {
     }
 
     public ArrayList<ArrayList> getMineByName(String mineName){
-        ArrayList<ArrayList> tableData = jdbc.executeQuery("SELECT * FROM mines WHERE name IN (\"" + mineName + "\")");
+        ArrayList<ArrayList> tableData = jdbc.executeQuery("SELECT * FROM mines WHERE mineName IN (\"" + mineName + "\")");
         return tableData;
     }
 

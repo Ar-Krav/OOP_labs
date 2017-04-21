@@ -1,12 +1,13 @@
-package region;
+package tsobject;
 
+import database.Towns;
 
 public class Town {
-    public Town(String name, int distanceToTown, int availableValueOfGold, int priceOfGold){
-        this.name = name;
-        this.distanceToTown = distanceToTown;
-        this.availableValueOfGold = availableValueOfGold;
-        this.priceOfGold = priceOfGold;
+    public Town(Towns town){
+        this.name = town.getName();
+        this.distanceToTown = town.getDistanceToTown();
+        this.availableValueOfGold = town.getAvailableValueOfGold();
+        this.priceOfGold = town.getPriceOfGold();
         this.valueOfEarnedMoney = 0;
     }
 

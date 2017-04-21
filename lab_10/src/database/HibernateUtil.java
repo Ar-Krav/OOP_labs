@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import region.Town;
+import tsobject.Town;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
